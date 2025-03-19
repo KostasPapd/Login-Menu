@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Menu</title>
+    <link rel="stylesheet" href="styling.css">
+    <script src="scripts.js"></script>
+</head>
+<body class="background">
+    <div class="register" id="registerMenu">
+        <p class="heading">Register</p>
+        <p>
+            <label for="Uname">Username:</label>
+            <input type="text" id="Uname" name="fname">
+        </p>
+        <p>
+            <label for="passReg">Password:</label>
+            <input type="password" id="passReg" name="passReg">
+        </p>
+        <p>
+            <label for="pass2Reg">Re-Type Password:</label>
+            <input type="password" id="pass2Reg" name="pass2Reg">
+        </p>
+        <button class="button" onclick="loginMenu()">Log-in Instead</button>
+        <button class="button" onclick="register()">Register</button>
+    </div>
+
+    <div class="register" id="loginMenu" style="visibility: hidden;">
+        <p class="heading">Login</p>
+        <p>
+            <label for="Unamelog">Username:</label>
+            <input type="text" id="Unamelog" name="fname">
+        </p>
+        <p>
+            <label for="passLog">Password:</label>
+            <input type="password" id="passLog" name="passLog">
+        </p>
+        <button class="button" onclick="registerMenu()">Register Instead</button>
+        <button class="button" onclick="logIn()">Log In</button>
+    </div>
+
+</body>
+</html>
