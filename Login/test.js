@@ -9,7 +9,7 @@ export const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function fetchData() {
   const { data, error } = await supabase
-    .from('test')
+    .from('accounts')
     .select('*');
   if (error) {
     console.error('Error fetching data:', error);
