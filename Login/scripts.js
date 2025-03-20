@@ -1,4 +1,5 @@
 let usersList = [];
+import CryptoJS from 'crypto-js';
 
 function loginMenu() {
     var x = document.getElementById("registerMenu");
@@ -46,10 +47,20 @@ function logIn(){
   var username = Unamelog.value
   var password = passLog.value
   if (usersList.length > 0 && usersList[0].username === username && usersList[0].password === password) {
-    window.alert("Login successful!");
-    Unamelog.value = "";
-    passLog.value = "";
+      window.alert("Login successful");
+// add code to redirect to home page
   } else {
       window.alert("Invalid username or password.");
   }
+}
+
+function hashPass(password){
+  var hash = CryptoJS.SHA256(password);
+  var hashPass = hash.toString(CryptoJS.enc.Hex);
+  return hashPass;
+}
+
+
+function checkLogin(username, password){
+  var password = hashPass(password);
 }
