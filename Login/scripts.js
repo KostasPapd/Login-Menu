@@ -1,7 +1,4 @@
-let usersList = [];
-import CryptoJS from 'crypto-js';
-
-function loginMenu() {
+function logInMenu() {
     var x = document.getElementById("registerMenu");
     x.style.visibility = "hidden";
     var y = document.getElementById("loginMenu");
@@ -22,12 +19,11 @@ function register(){
     if (username.length > 5){
       if (password === password_2 && password.length >= 8 && password_2.length >= 8){
         if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).+$/.test(password)){
-          usersList = [{ username: username, password: password }];
           window.alert("Account created");
           Uname.value = "";
           passReg.value = "";
           pass2Reg.value = "";
-          loginMenu()
+          logInMenu()
         }
         else{
           window.alert("Invalid Password");
@@ -46,7 +42,7 @@ function register(){
 function logIn(){
   var username = Unamelog.value
   var password = passLog.value
-  if (usersList.length > 0 && usersList[0].username === username && usersList[0].password === password) {
+  if (username === "admin" && password === "admin"){ 
       window.alert("Login successful");
 // add code to redirect to home page
   } else {
