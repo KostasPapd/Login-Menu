@@ -50,6 +50,8 @@ function logIn(){
   }
 }
 
+const CryptoJS = require("crypto-js");
+
 function hashPass(password){
   var hash = CryptoJS.SHA256(password);
   var hashPass = hash.toString(CryptoJS.enc.Hex);
@@ -60,3 +62,5 @@ function hashPass(password){
 function checkLogin(username, password){
   var password = hashPass(password);
 }
+
+console.log(hashPass("admin"))
