@@ -1,3 +1,4 @@
+const { search } = require('./database_tasks');
 function logInMenu() {
     var x = document.getElementById("registerMenu");
     x.style.visibility = "hidden";
@@ -42,15 +43,9 @@ function register(){
 function logIn(){
   var username = Unamelog.value
   var password = passLog.value
-  if (username === "admin" && password === "admin"){ 
-      window.alert("Login successful");
-// add code to redirect to home page
-  } else {
-      window.alert("Invalid username or password.");
-  }
+  console.log('test')
+  checkLogin(username, password)
 }
-
-const CryptoJS = require("crypto-js");
 
 function hashPass(password){
   var hash = CryptoJS.SHA256(password);
@@ -59,8 +54,18 @@ function hashPass(password){
 }
 
 
-function checkLogin(username, password){
-  var password = hashPass(password);
-}
 
-console.log(hashPass("admin"))
+function checkLogin(username, password) {
+  var hashedPassword = hashPass(password);
+  console.log(`Checking login for user: ${username}, hashed password: ${hashedPassword}`);
+  console.log(`Calling search function:`, search); // Debugging log
+  search(username, hashedPassword, (isValid) => {
+      console.log(`Search result: ${isValid}`);
+      if (isValid) {
+          window.alert("Login successful");
+          window.location.href = "home.html";
+      } else {
+          window.alert("Invalid username or password.");
+      }
+  });
+}
