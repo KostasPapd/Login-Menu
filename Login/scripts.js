@@ -1,4 +1,3 @@
-const { search } = require('./database_tasks');
 function logInMenu() {
     var x = document.getElementById("registerMenu");
     x.style.visibility = "hidden";
@@ -57,8 +56,6 @@ function hashPass(password){
 
 function checkLogin(username, password) {
   var hashedPassword = hashPass(password);
-  console.log(`Checking login for user: ${username}, hashed password: ${hashedPassword}`);
-  console.log(`Calling search function:`, search); // Debugging log
   search(username, hashedPassword, (isValid) => {
       console.log(`Search result: ${isValid}`);
       if (isValid) {
