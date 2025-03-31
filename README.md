@@ -17,3 +17,6 @@ Password - "admin"
 
 ## Acknowledgements
 [Background](https://www.hdwallpapers.in/cyan_windows_11_logo_4k_hd_windows_11-wallpapers.html)
+
+## Project Status
+Complete (no longer in development)
