@@ -20,5 +20,3 @@ Password - "admin"
 
 ## Project Status
 Complete (no longer in development)
-
-![Views](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/KostasPapd/Login-Menu/main/views.json)
